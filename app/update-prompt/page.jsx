@@ -9,7 +9,7 @@ function EditPrompt() {
     const router = useRouter();
     // const searchParams = useSearchParams();
 
-    let searchParams = new URLSearchParams(document.location.search);
+    let searchParams = new URLSearchParams(document?.location?.search);
 
     const promptId = searchParams.get("id");
 
