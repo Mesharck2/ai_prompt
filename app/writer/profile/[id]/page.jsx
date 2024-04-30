@@ -2,7 +2,7 @@
 
 import Profile from '@components/Profile';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 
 const RefactoredWriter = ({ params }) => {
     const searchParam = useSearchParams();
@@ -29,13 +29,15 @@ const RefactoredWriter = ({ params }) => {
     console.log(paramName);
 
     return (
-        <Profile
-            name={paramName}
-            desc="Welcome to his personalized profile page"
-            data={posts}
-            handleEdit={handleEdit}
-            handleDelete={handleDelete}
-        />
+        <Suspense>
+            <Profile
+                name={paramName}
+                desc="Welcome to his personalized profile page"
+                data={posts}
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+            />
+        </Suspense>
     )
 }
 
