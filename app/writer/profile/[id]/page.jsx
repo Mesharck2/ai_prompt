@@ -29,7 +29,7 @@ const RefactoredWriter = ({ params }) => {
     console.log(paramName);
 
     return (
-        <Suspense>
+        <Suspense fallback={<div>Loading....</div>}>
             <Profile
                 name={paramName}
                 desc="Welcome to his personalized profile page"
