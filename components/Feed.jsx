@@ -1,9 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-
 import PromptCard from "./PromptCard"
-
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
@@ -25,15 +23,15 @@ const Feed = () => {
 
   const handleTagClick = async (tag) => {
     setSearchText(tag);
-    const searchInDB = await fetch('/api/prompt/search', {
+    const searchInDB2 = await fetch('/api/prompt/search', {
       method: "POST",
       body: JSON.stringify({
         search: searchText,
         type: "tag"
       })
     })
-    const data = await searchInDB.json();
-    setPosts(data);
+    const data2 = await searchInDB2.json();
+    setPosts(data2);
   }
 
   const handleSearchChange = async (e) => {
@@ -50,8 +48,8 @@ const Feed = () => {
       })
     })
 
-    const data = await searchInDB.json();
-    setPosts(data);
+    const data1 = await searchInDB.json();
+    setPosts(data1);
 
   }
 
