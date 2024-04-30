@@ -7,9 +7,9 @@ import Form from "@components/Form";
 
 function EditPrompt() {
     const router = useRouter();
-    // const searchParams = useSearchParams();
+    const searchParam = useSearchParams();
 
-    let searchParams = new URLSearchParams(document?.location?.search);
+    let searchParams = new URLSearchParams(searchParam);
 
     const promptId = searchParams.get("id");
 
