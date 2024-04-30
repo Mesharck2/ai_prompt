@@ -1,43 +1,43 @@
-"use client";
+// "use client";
 
-import { useState, useEffect } from 'react';
-import Profile from '@components/Profile';
-import { useSearchParams } from 'next/navigation';
+// import { useState, useEffect } from 'react';
+// import Profile from '@components/Profile';
+// import { useSearchParams } from 'next/navigation';
 
-const WriterProfile = () => {
-    const searchParams = useSearchParams();
-    const writerId = searchParams.get("id");
-    const [posts, setPosts] = useState([]);
-
-
-    useEffect(() => {
-        const getWriterDetails = async () => {
-            const response = await fetch(`/api/users/${writerId}/posts`);
-            const data = await response.json();
-            setPosts(data);
-        }
-        getWriterDetails();
-
-    }, []);
-
-    const handleEdit = () => {
-
-    }
-
-    const handleDelete = async () => {
-
-    }
+// const WriterProfile = () => {
+//     const searchParams = useSearchParams();
+//     const writerId = searchParams.get("id");
+//     const [posts, setPosts] = useState([]);
 
 
-    return (
-        <Profile
-            name={posts[0]?.creator.username}
-            desc="Welcome to his personalized profile page"
-            data={posts}
-            handleEdit={handleEdit}
-            handleDelete={handleDelete}
-        />
-    )
-}
+//     useEffect(() => {
+//         const getWriterDetails = async () => {
+//             const response = await fetch(`/api/users/${writerId}/posts`);
+//             const data = await response.json();
+//             setPosts(data);
+//         }
+//         getWriterDetails();
 
-export default WriterProfile;
+//     }, []);
+
+//     const handleEdit = () => {
+
+//     }
+
+//     const handleDelete = async () => {
+
+//     }
+
+
+//     return (
+//         <Profile
+//             name={posts[0]?.creator.username}
+//             desc="Welcome to his personalized profile page"
+//             data={posts}
+//             handleEdit={handleEdit}
+//             handleDelete={handleDelete}
+//         />
+//     )
+// }
+
+// export default WriterProfile;
