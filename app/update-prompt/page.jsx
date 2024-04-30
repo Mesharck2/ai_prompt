@@ -38,7 +38,7 @@ function EditPrompt() {
 
     }, [promptId])
 
-    console.log(promptId)
+    // console.log(promptId)
 
     const editPrompt = async (e) => {
         e.preventDefault();
