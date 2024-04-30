@@ -5,7 +5,8 @@ import { useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react'
 
 const RefactoredWriter = ({ params }) => {
-    const searchParam = useSearchParams();
+    // const searchParam = useSearchParams();
+    let searchParam = new URLSearchParams(document.location.search);
     const paramName = searchParam.get("name");
     const [posts, setPosts] = useState([]);
 

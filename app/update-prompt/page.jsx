@@ -7,7 +7,10 @@ import Form from "@components/Form";
 
 function EditPrompt() {
     const router = useRouter();
-    const searchParams = useSearchParams();
+    // const searchParams = useSearchParams();
+
+    let searchParams = new URLSearchParams(document.location.search);
+
     const promptId = searchParams.get("id");
 
     const [submitting, setSubmitting] = useState(false);
@@ -30,6 +33,7 @@ function EditPrompt() {
 
     }, [promptId])
 
+    console.log(promptId)
 
     const editPrompt = async (e) => {
         e.preventDefault();
