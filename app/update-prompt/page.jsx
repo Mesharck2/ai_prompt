@@ -5,13 +5,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import Form from "@components/Form";
 
+
 function EditPrompt() {
     const router = useRouter();
-    const searchParam = useSearchParams();
-
-    let searchParams = new URLSearchParams(searchParam);
-
-    const promptId = searchParams.get("id");
 
     const [submitting, setSubmitting] = useState(false);
     const [post, setPost] = useState({
@@ -19,8 +15,17 @@ function EditPrompt() {
         tag: "",
     })
 
+    const getPromptId = () => {
+        const searchParam = useSearchParams();
+        let searchParams = new URLSearchParams(searchParam);
+        const promptId = searchParams.get("id");
+        return promptId;
+    }
+
     useEffect(() => {
         const getPromptDetails = async () => {
+
+            const promptId = getPromptId();
             const response = await fetch(`/api/prompt/${promptId}`)
             const data = await response.json();
 
