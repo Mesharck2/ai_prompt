@@ -21,11 +21,11 @@ function EditPrompt() {
         const promptId = searchParams.get("id");
         return promptId;
     }
+    const promptId = getPromptId();
 
     useEffect(() => {
         const getPromptDetails = async () => {
 
-            const promptId = getPromptId();
             const response = await fetch(`/api/prompt/${promptId}`)
             const data = await response.json();
 
